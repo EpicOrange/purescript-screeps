@@ -26,7 +26,7 @@ foreign import runThisFn4 :: forall this a b c d e. String -> this -> a -> b -> 
 foreign import runThisFn5 :: forall this a b c d e f. String -> this -> a -> b -> c -> d -> e -> f
 foreign import runThisFn6 :: forall this a b c d e f g. String -> this -> a -> b -> c -> d -> e -> f -> g
 
-foreign import data NullOrUndefined :: * -> *
+foreign import data NullOrUndefined :: Type -> Type
 foreign import null :: forall a. NullOrUndefined a
 foreign import undefined :: forall a. NullOrUndefined a
 foreign import notNullOrUndefined :: forall a. a -> NullOrUndefined a
@@ -43,7 +43,7 @@ toNullable = maybe null notNullOrUndefined
 toUndefinable :: forall a. Maybe a -> NullOrUndefined a
 toUndefinable = maybe undefined notNullOrUndefined
 
-foreign import data JsObject :: *
+foreign import data JsObject :: Type
 foreign import selectMaybesImpl :: forall a. (Maybe a -> Boolean) -> (Maybe a -> a) -> a -> JsObject
 
 selectMaybes :: forall a. a -> JsObject

@@ -2,18 +2,20 @@
 module Screeps.Types where
 
 import Prelude
-import Data.Argonaut.Decode (class DecodeJson, decodeJson, gDecodeJson)
-import Data.Argonaut.Encode (class EncodeJson, encodeJson, gEncodeJson)
+import Data.Argonaut.Decode (class DecodeJson, decodeJson)
+import Data.Argonaut.Encode (class EncodeJson, encodeJson)
+import Data.Argonaut.Decode.Generic (gDecodeJson)
+import Data.Argonaut.Encode.Generic (gEncodeJson)
 import Data.Generic (class Generic, gEq, gShow)
 import Data.Maybe (Maybe)
 import Data.StrMap as StrMap
 
-foreign import data GameGlobal :: *
+foreign import data GameGlobal :: Type
 
-foreign import data Market :: *
-foreign import data Room :: *
-foreign import data RoomPosition :: *
-foreign import data WorldMap :: *
+foreign import data Market :: Type
+foreign import data Room :: Type
+foreign import data RoomPosition :: Type
+foreign import data WorldMap :: Type
 
 type RoomObject a = RawRoomObject a
 type Structure a = RoomObject (RawStructure a)
@@ -47,37 +49,37 @@ type Nuke = RoomObject RawNuke
 type Resource = RoomObject RawResource
 type Source = RoomObject RawSource
 
-foreign import data RawOwnedStructure :: * -> *
-foreign import data RawRoomObject :: * -> *
-foreign import data RawStructure :: * -> *
+foreign import data RawOwnedStructure :: Type -> Type
+foreign import data RawRoomObject :: Type -> Type
+foreign import data RawStructure :: Type -> Type
 
-foreign import data RawContainer :: *
-foreign import data RawController :: *
-foreign import data RawExtension :: *
-foreign import data RawExtractor :: *
-foreign import data RawKeeperLair :: *
-foreign import data RawLab :: *
-foreign import data RawLink :: *
-foreign import data RawNuker :: *
-foreign import data RawObserver :: *
-foreign import data RawPortal :: *
-foreign import data RawPowerBank :: *
-foreign import data RawPowerSpawn :: *
-foreign import data RawRampart :: *
-foreign import data RawRoad :: *
-foreign import data RawSpawn :: *
-foreign import data RawStorage :: *
-foreign import data RawTerminal :: *
-foreign import data RawTower :: *
-foreign import data RawWall :: *
+foreign import data RawContainer :: Type
+foreign import data RawController :: Type
+foreign import data RawExtension :: Type
+foreign import data RawExtractor :: Type
+foreign import data RawKeeperLair :: Type
+foreign import data RawLab :: Type
+foreign import data RawLink :: Type
+foreign import data RawNuker :: Type
+foreign import data RawObserver :: Type
+foreign import data RawPortal :: Type
+foreign import data RawPowerBank :: Type
+foreign import data RawPowerSpawn :: Type
+foreign import data RawRampart :: Type
+foreign import data RawRoad :: Type
+foreign import data RawSpawn :: Type
+foreign import data RawStorage :: Type
+foreign import data RawTerminal :: Type
+foreign import data RawTower :: Type
+foreign import data RawWall :: Type
 
-foreign import data RawConstructionSite :: *
-foreign import data RawCreep :: *
-foreign import data RawFlag :: *
-foreign import data RawMineral :: *
-foreign import data RawNuke :: *
-foreign import data RawResource :: *
-foreign import data RawSource :: *
+foreign import data RawConstructionSite :: Type
+foreign import data RawCreep :: Type
+foreign import data RawFlag :: Type
+foreign import data RawMineral :: Type
+foreign import data RawNuke :: Type
+foreign import data RawResource :: Type
+foreign import data RawSource :: Type
 
 type Path = Array PathStep -- or String?
 

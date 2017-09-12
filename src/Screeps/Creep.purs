@@ -14,7 +14,7 @@ import Screeps.FFI (runThisEffFn0, runThisEffFn1, runThisEffFn2, runThisEffFn3, 
 import Screeps.Memory (fromJson, toJson)
 import Screeps.Room (PathOptions)
 
-foreign import data CreepCargo :: *
+foreign import data CreepCargo :: Type
 
 type BodyPart =
   { boost :: Maybe String

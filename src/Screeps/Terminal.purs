@@ -10,7 +10,7 @@ import Screeps.FFI (runThisEffFn3, runThisEffFn4, unsafeField)
 import Screeps.Structure (unsafeCast)
 import Screeps.Types (ResourceType(ResourceType), ReturnCode, Structure, Terminal)
 
-foreign import data Store :: *
+foreign import data Store :: Type
 
 store :: Terminal -> Store
 store = unsafeField "store"

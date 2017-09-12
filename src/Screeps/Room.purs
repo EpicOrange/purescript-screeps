@@ -13,7 +13,7 @@ import Screeps.Effects (CMD, TICK)
 import Screeps.Types (Controller, Color, FilterFn, FindType, LookType, Mode, Path, ReturnCode, Room, RoomPosition, Storage, StructureType, TargetPosition(..), Terminal)
 import Screeps.FFI (runThisEffFn1, runThisEffFn2, runThisEffFn3, runThisEffFn4, runThisEffFn5, runThisFn1, runThisFn2, runThisFn3, selectMaybes, toMaybe, unsafeField)
 
-foreign import data RoomGlobal :: *
+foreign import data RoomGlobal :: Type
 foreign import getRoomGlobal :: forall e. Eff (tick :: TICK | e) RoomGlobal
 
 -- TODO: costCallback option
